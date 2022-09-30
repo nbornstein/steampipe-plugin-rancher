@@ -1,5 +1,3 @@
-![image](https://hub.steampipe.io/images/plugins/nbornstein/rancher-social-graphic.png)
-
 # Rancher Plugin for Steampipe
 
 Use SQL to query Rancher components.
