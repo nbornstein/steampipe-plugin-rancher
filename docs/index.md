@@ -1,20 +1,20 @@
 ---
 organization: Turbot
 category: ["software development"]
-icon_url: "/images/plugins/turbot/kubernetes.svg"
+icon_url: "/images/plugins/turbot/rancher.svg"
 brand_color: "#326CE5"
-display_name: "Kubernetes"
-short_name: "kubernetes"
-description: "Steampipe plugin for Kubernetes components."
-og_description: "Query Kubernetes with SQL! Open source CLI. No DB required."
-og_image: "/images/plugins/turbot/kubernetes-social-graphic.png"
+display_name: "Rancher"
+short_name: "rancher"
+description: "Steampipe plugin for Rancher components."
+og_description: "Query Rancher with SQL! Open source CLI. No DB required."
+og_image: "/images/plugins/turbot/rancher-social-graphic.png"
 ---
 
-# Kubernetes + Steampipe
+# Rancher + Steampipe
 
 [Steampipe](https://steampipe.io) is an open source CLI to instantly query cloud APIs using SQL.
 
-[Kubernetes](https://kubernetes.io) is an open-source system for automating deployment, scaling, and management of containerized applications.
+[Rancher](https://rancher.io) is an open-source system for automating deployment, scaling, and management of containerized applications.
 
 For example:
 
@@ -26,7 +26,7 @@ select
   creation_timestamp,
   pod_ip
 from
-  kubernetes_pod;
+  rancher_pod;
 ```
 
 ```
@@ -42,48 +42,48 @@ from
 
 ## Documentation
 
-- **[Table definitions & examples →](/plugins/turbot/kubernetes/tables)**
+- **[Table definitions & examples →](/plugins/turbot/rancher/tables)**
 
 ## Get started
 
 ### Install
 
-Download and install the latest Kubernetes plugin:
+Download and install the latest Rancher plugin:
 
 ```bash
-steampipe plugin install kubernetes
+steampipe plugin install rancher
 ```
 
 ### Configuration
 
-Installing the latest kubernetes plugin will create a config file (`~/.steampipe/config/kubernetes.spc`) with a single connection named `kubernetes`:
+Installing the latest rancher plugin will create a config file (`~/.steampipe/config/rancher.spc`) with a single connection named `rancher`:
 
 ```hcl
-connection "kubernetes" {
-  plugin      = "kubernetes"
+connection "rancher" {
+  plugin      = "rancher"
 }
 ```
 
-This will create a `kubernetes` connection that uses the default kubeconfig context.
+This will create a `rancher` connection that uses the default kubeconfig context.
 
 ## Get involved
 
-- Open source: https://github.com/turbot/steampipe-plugin-kubernetes
+- Open source: https://github.com/turbot/steampipe-plugin-rancher
 - Community: [Slack Channel](https://steampipe.io/community/join)
 
 ## Advanced configuration options
 
 If you have a kube config setup using the kubectl CLI Steampipe just works with that connection.
 
-The Kubernetes plugin allows you set the name of kube kubectl context with the `config_context` argument in any connection profile. You may also specify the path to kube config file with `config_path` argument.
+The Rancher plugin allows you set the name of kube kubectl context with the `config_context` argument in any connection profile. You may also specify the path to kube config file with `config_path` argument.
 
-This plugin also supports querying Kubernetes clusters using [OpenID Connect](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#openid-connect-tokens) (OIDC) authentication. No extra configuration is required in a connection profile to query clusters using OIDC.
+This plugin also supports querying Rancher clusters using [OpenID Connect](https://rancher.io/docs/reference/access-authn-authz/authentication/#openid-connect-tokens) (OIDC) authentication. No extra configuration is required in a connection profile to query clusters using OIDC.
 
 ### Credentials via kube config
 
 ```hcl
 connection "k8s_minikube" {
-  plugin         = "kubernetes"
+  plugin         = "rancher"
   config_context = "minikube"
   # config_path    = "~/.kube/config"
 }
