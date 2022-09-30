@@ -1,0 +1,6 @@
+connection "rancher" {
+  plugin    = "rancher"                 
+}
+
+
+    

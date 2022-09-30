@@ -1,6 +1,0 @@
-connection "kubernetes" {
-  plugin    = "kubernetes"                 
-}
-
-
-    
