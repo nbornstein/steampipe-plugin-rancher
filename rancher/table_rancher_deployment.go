@@ -14,7 +14,7 @@ import (
 
 func tableRancherDeployment(ctx context.Context) *plugin.Table {
 	return &plugin.Table{
-		Name:        "kubernetes_deployment",
+		Name:        "rancher_deployment",
 		Description: "Kubernetes Deployment enables declarative updates for Pods and ReplicaSets.",
 		Get: &plugin.GetConfig{
 			KeyColumns: plugin.AllColumns([]string{"name", "namespace"}),

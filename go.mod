@@ -1,4 +1,4 @@
-module github.com/turbot/steampipe-plugin-kubernetes
+module github.com/nbornstein/steampipe-plugin-rancher
 
 go 1.19
 
